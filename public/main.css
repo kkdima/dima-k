@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'Vision';
+	src: url('/Vision-Regular.otf');
+}
+
+@font-face {
+	font-family: 'Vision';
+	src: url('/Vision-Bold.otf');
+	font-weight: bold;
+}
+
+:global(body) {
+	margin: 0;
+	font-family: 'Vision', sans-serif;
+}
+
+img {
+	user-select: none;
+	-webkit-user-drag: none;
+}
+
+.w-body-max {
+	max-width: 954px;
+}
+.text-5xl-custom {
+	font-size: 56px;
+}
+
+.text-title {
+	font-size: 36px;
+}
+
+.bg-blue-c {
+	background-color: #d2dfff;
+}
+
+.container-custom {
+	padding: 1.5rem;
+	background-color: #f3f3f3;
+}
+
+.paragraph {
+	/* font-style: normal; */
+	font-weight: 100;
+	font-size: 20px;
+	line-height: 150%;
+	color: #888888;
+}
+
+.border-box {
+	box-sizing: content-box;
+}
+
+.max-width-467 {
+	max-width: 467px;
+	width: 100%;
+}
+
+
+
+

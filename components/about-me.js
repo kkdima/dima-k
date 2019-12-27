@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutMe = () => {
 	return (
-		<div className='text-lg container-custom'>
+		<div className='rounded text-lg container-custom'>
 			<h2 className='text-4xl font-bold'>About me</h2>
 			<p className='paragraph mb-5'>
 				More than anything else I strive to create. And things like design serve me

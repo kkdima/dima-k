@@ -6,7 +6,7 @@ const Home = () => (
     <Head>
       <title>Dima K.</title>
       <link rel="icon" href="/favicon.ico" />
-      <link rel="stylesheet" href="/tailwind.css"/>
+      {/* <link rel="stylesheet" href="/tailwind.css"/> */}
       <link rel="stylesheet" href="/main.css"/>
     </Head>
   </div>

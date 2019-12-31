@@ -1,15 +1,21 @@
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 
-
 const Projects = () => {
-	const ref = useRef();
-
 	return (
-		<div className='rounded container-custom h-full md:w-full md:width-467'>
+		<div className='rounded container-custom h-full md:w-full md:width-467 overflow-hidden'>
 			<h2 className='text-4xl font-bold mb-6'>Projects</h2>
 			<div className='flex-col content-between'>
-				<div className='relative mb-9'>
+				<div
+					className='relative mb-9'
+					data-aos='fade-up'
+					data-aos-offset='50'
+					data-aos-duration='500'
+					data-aos-easing='ease-in-out'
+					data-aos-mirror='true'
+					data-aos-once='false'
+					data-aos-anchor-placement='top-bottom'
+				>
 					<img src='/images/barva-design.png' className='rounded w-full' alt='' />
 					<motion.button
 						whileHover={{ scale: 1.1 }}
@@ -19,7 +25,18 @@ const Projects = () => {
 						open
 					</motion.button>
 				</div>
-				<div className='relative mb-9'>
+
+				<div
+					className='relative mb-9'
+					data-aos='fade-up'
+					data-aos-offset='50'
+					data-aos-delay='50'
+					data-aos-duration='500'
+					data-aos-easing='ease-in-out'
+					data-aos-mirror='true'
+					data-aos-once='false'
+					data-aos-anchor-placement='top-bottom'
+				>
 					<img src='/images/github-finder.svg' className='rounded w-full' alt='' />
 					<motion.button
 						whileHover={{ scale: 1.1 }}
@@ -29,8 +46,19 @@ const Projects = () => {
 						open
 					</motion.button>
 				</div>
-				<div className='relative mb-9'>
-					<img src='images/contacts-2-0.svg' className='rounded w-full' alt='' />
+
+				<div
+					className='relative mb-9'
+					data-aos='fade-up'
+					data-aos-offset='50'
+					data-aos-delay='100'
+					data-aos-duration='500'
+					data-aos-easing='ease-in-out'
+					data-aos-mirror='true'
+					data-aos-once='false'
+					data-aos-anchor-placement='top-bottom'
+				>
+					<img src='images/Contacts-2-0.svg' className='rounded w-full' alt='' />
 					<motion.button
 						whileHover={{ scale: 1.1 }}
 						whileTap={{ scale: 0.9, y: '5px' }}

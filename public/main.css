@@ -3,24 +3,28 @@
 @tailwind utilities;
 
 @font-face {
-	font-family: "Vision";
-	src: url("/Vision-Regular.otf");
+	font-family: 'Vision';
+	src: url('/Vision-Regular.otf');
 }
 
 @font-face {
-	font-family: "Vision";
-	src: url("/Vision-Bold.otf");
+	font-family: 'Vision';
+	src: url('/Vision-Bold.otf');
 	font-weight: bold;
 }
 
 :global(body) {
 	margin: 0;
-	font-family: "Vision", sans-serif;
+	font-family: 'Vision', sans-serif;
 }
 
 img {
 	user-select: none;
 	-webkit-user-drag: none;
+}
+
+button:focus {
+	outline: 0;
 }
 
 .w-body-max {
@@ -75,6 +79,25 @@ img {
 	margin: 1.75rem;
 }
 
+.ml-25 {
+	margin-left: 6.2rem;
+}
+
 .min-w-80 {
 	min-width: 70%;
+}
+
+.blurit {
+	/* filter: blur(1); */
+	backdrop-filter: blur(12px);
+	position: absolute;
+	width: 100vw;
+	height: 100%;
+	box-shadow: 0 0 1rem 0 (rgba(0, 0, 0, .2));
+}
+.blur2 {
+	margin: auto;
+	width: 300px;
+	height: 50vh;
+	background-color: red
 }

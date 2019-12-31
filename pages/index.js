@@ -8,9 +8,9 @@ import Ad from '../components/your-ad';
 
 const Index = () => (
 	<Layout>
-		<div className='flex flex-col w-5/6 m-auto mt-20 w-body-max'>
-			<div className='pl-6 flex flex-col-reverse md:flex-row mb-20'>
-				<div className='leading-tight text-3xl mt-6 md:mr-10 text-xl'>
+		<div className='flex flex-col sm:w-5/6 m-auto mt-20 w-body-max'>
+			<div className='flex flex-col-reverse md:flex-row mb-20'>
+				<div className='pl-6 leading-tight text-3xl mt-6 md:mr-10 text-xl'>
 					<p>Hi, my name is</p>
 					<h1 className='ml:text-5xl-custom font-bold'>Dima Kononenko</h1>
 					<p className=''>I'm a</p>

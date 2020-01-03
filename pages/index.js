@@ -1,10 +1,10 @@
-import React from 'react';
-import Layout from '../components/my-layout';
-import Projects from '../components/projects.js';
-import Technologies from '../components/technologies.js';
-import AboutMe from '../components/about-me.js';
-import ContactMe from '../components/contact-me.js';
-import Ad from '../components/your-ad';
+import React from "react";
+import Layout from "../components/my-layout";
+import Projects from "../components/projects.js";
+import Technologies from "../components/technologies.js";
+import AboutMe from "../components/about-me.js";
+import ContactMe from "../components/contact-me.js";
+import Message from "../components/message";
 
 const Index = () => (
 	<Layout>
@@ -17,25 +17,30 @@ const Index = () => (
 					<h1 className='ml:text-5xl-custom font-bold'>front-end developer.</h1>
 				</div>
 				<div className='m-auto md:m-0'>
-					<img src='/images/User-pic-emoji.png' className='object-contain' alt='' />
+					<img
+						src='/images/User-pic-emoji.png'
+						className='object-contain'
+						alt=''
+					/>
 				</div>
 			</div>
 
 			<AboutMe />
 
 			<div className='flex flex-col md:flex-row justify-between mt-10'>
-				<div className='mb-10 md:mb-0 md:mr-2 p-0'>
+				<div className='mb-10 max-w-full md:w-1/2 md:mb-0 md:mr-3 p-0 '>
 					<Projects />
 				</div>
-				<div className='flex flex-col md:max-w-1/2 md:ml-2'>
-					<div className='mb-10 max-w-full md:max-width-467'>
+				<div className='flex flex-col md:w-1/2 md:ml-3'>
+					<div className='mb-10 max-w-full md:max-width-465'>
 						<Technologies />
 					</div>
-					<div className='max-w-full md:max-width-467'>
+					<div className='max-w-full md:max-width-465'>
 						<ContactMe />
 					</div>
 				</div>
 			</div>
+			<Message />
 		</div>
 	</Layout>
 );

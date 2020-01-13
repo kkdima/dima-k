@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 
-const Message = () => {
+const Form = () => {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
@@ -16,9 +16,7 @@ const Message = () => {
 			message
 		};
 
-		axios.post('/api/sendMail', dataToSubmit);
-
-		
+		axios.post('/api/send', dataToSubmit);
 
 		// resetForm();
 	};
@@ -42,7 +40,12 @@ const Message = () => {
 	return (
 		<div className='rounded max-w-full md:w-1/2 mt-10 container-custom md:mr-3 md:max-width-465'>
 			<h2 className='text-4xl font-bold mb-6'> Send me a message </h2>
-			<form onSubmit={handleSubmit} method="POST" className='flex flex-col'>
+			<form
+				onSubmit={handleSubmit}
+				method='POST'
+				action='api/sendMail'
+				className='flex flex-col'
+			>
 				<input
 					id='name'
 					type='text'
@@ -82,4 +85,4 @@ const Message = () => {
 	);
 };
 
-export default Message;
+export default Form;

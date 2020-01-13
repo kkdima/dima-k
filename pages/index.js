@@ -5,7 +5,7 @@ import Projects from '../components/projects.js';
 import Technologies from '../components/technologies.js';
 import AboutMe from '../components/about-me.js';
 import ContactMe from '../components/contact-me.js';
-import Message from '../components/message.js';
+import Form from '../components/form.js';
 
 export default () => (
 	<Layout>
@@ -37,7 +37,7 @@ export default () => (
 					</div>
 				</div>
 			</div>
-			<Message />
+			<Form />
 		</div>
 	</Layout>
 );

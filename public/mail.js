@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const getEmailData = ({ email, name, message }) => {
 	const from = name && email ? `${name} <${email}>` : `${name || email}`;
-	const message = {
+	const form = {
 		from,
 		to: 'dimaakononenko@gmail.com',
 		subject: `New message from ${from}`,
@@ -14,7 +14,7 @@ const getEmailData = ({ email, name, message }) => {
 	};
 
 	return new Promise((resolve, reject) => {
-		transporter.sendMail(message, (error, info) =>
+		transporter.sendMail(form, (error, info) =>
 			error ? reject(error) : resolve(info)
 		);
 	});

@@ -4,12 +4,12 @@
 
 @font-face {
 	font-family: "Vision";
-	src: url("/Vision-Regular.otf");
+	src: url("/fonts/Vision-Regular.otf");
 }
 
 @font-face {
 	font-family: "Vision";
-	src: url("/Vision-Bold.otf");
+	src: url("/fonts/Vision-Bold.otf");
 	font-weight: bold;
 }
 

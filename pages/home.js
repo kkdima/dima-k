@@ -1,12 +1,12 @@
-import React from "react";
-import Layout from "../components/my-layout";
-import Projects from "../components/projects.js";
-import Technologies from "../components/technologies.js";
-import AboutMe from "../components/about-me.js";
-import ContactMe from "../components/contact-me.js";
-import Message from "../components/message";
+import React from 'react';
+import Layout from '../public/components/layout';
+import Projects from '../public/components/projects.js';
+import Technologies from '../public/components/technologies.js';
+import AboutMe from '../public/components/about-me.js';
+import ContactMe from '../public/components/contact-me.js';
+import Message from '../public/components/message-me';
 
-const Index = () => (
+const Home = () => (
 	<Layout>
 		<div className='flex flex-col sm:w-5/6 m-auto mt-20 w-body-max'>
 			<div className='flex flex-col-reverse md:flex-row mb-20'>
@@ -17,11 +17,7 @@ const Index = () => (
 					<h1 className='ml:text-5xl-custom font-bold'>front-end developer.</h1>
 				</div>
 				<div className='m-auto md:m-0'>
-					<img
-						src='/images/User-pic-emoji.png'
-						className='object-contain'
-						alt=''
-					/>
+					<img src='/images/User-pic-emoji.png' className='object-contain' alt='' />
 				</div>
 			</div>
 
@@ -45,4 +41,4 @@ const Index = () => (
 	</Layout>
 );
 
-export default Index;
+export default Home;

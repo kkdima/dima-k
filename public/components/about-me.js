@@ -8,20 +8,6 @@ const info = [
 	'1K+ Deliveries'
 ];
 
-const variants = {
-	visible: {
-		opacity: 1,
-		transition: {
-			// duration: 1
-		}
-	},
-	hidden: {
-		opacity: 0,
-		transition: {
-			// duration: 0
-		}
-	}
-};
 
 // const fs = require('fs');
 // const path = require('path');
@@ -40,7 +26,7 @@ const axios = require('axios');
 
 // function downloadCV() {
 // 	axios({
-// 		url: 'hdima-k.dimaakononenko.now.sh/public/cv.pdf',
+// 		url: 'dima-k.dimaakononenko.now.sh/public/cv.pdf',
 // 		method: 'GET',
 // 		responseType: 'blob', // important
 // 	  }).then((response) => {
@@ -53,6 +39,20 @@ const axios = require('axios');
 // }
 
 const AboutMe = () => {
+	const variants = {
+		enter: {
+			opacity: 1,
+			x: 0,
+			transition: {
+				duration: 1
+			}
+		},
+		hidden: {
+			opacity: 0,
+			x: 20
+		}
+	};
+
 	return (
 		<div className='rounded text-lg container-custom'>
 			<h2 className='text-4xl font-bold'>About me</h2>
@@ -80,6 +80,9 @@ const AboutMe = () => {
 				<a href='/cv.pdf' target='_blank'>
 					<motion.button
 						// onClick={downloadCV()}
+						variants={variants}
+						initial='hidden'
+						animate= 'enter'
 						whileHover={{ scale: 1.1 }}
 						whileTap={{ scale: 0.9, y: '5px' }}
 						className='py-1 px-3 rounded flex bg-blue-c'

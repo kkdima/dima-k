@@ -1,6 +1,5 @@
 const proxy = require('http-proxy-middleware');
-const express = require('express');
 
-module.exports = (server) => {
-      server.use(proxy('/', {target: 'http://localhost:3000'}))
-}
+module.exports = function(server) {
+	server.use(proxy('/api', { target: 'http://localhost:5000' }));
+};

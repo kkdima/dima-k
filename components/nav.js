@@ -1,6 +1,6 @@
 import React from 'react';
+import '../styles/main.css';
 // import Link from "next/link";
-import '../css/main.css';
 
 const links = [
 	{ href: '', label: 'Get in touch' },

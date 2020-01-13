@@ -1,47 +1,39 @@
 const express = require('express');
 const next = require('next');
-const bodyParser = require('body-parser');
+const path = require('path');
 
-const port = parseInt(process.env.PORT, 10) || 3000;
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+
+const port = parseInt(process.env.PORT, 10) || 5000;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
-const server = express();
 
 app.prepare().then(() => {
-	server.use(bodyParser.json());
-	server.use(bodyParser.urlencoded({ extended: true }));
+	const { mail } = require('./public/mail');
+	const server = express();
 
-	// GET
-	server.get('*', (req, res) => {
+	// body parser middleware
+	server.use(bodyParser.urlencoded({ extended: true }));
+	server.use(bodyParser.json());
+	server.use(cookieParser());
+
+	// static folder
+	server.use('/public', express.static(path.join(__dirname, 'public')));
+
+	server.all('*', (req, res) => {
 		return handle(req, res);
 	});
 
-	// Listen
 	server.listen(port, err => {
 		if (err) throw err;
-		console.log(`Server started on http://localhost:${port}`);
+		console.log(`> Ready on http://localhost:${port}`);
 	});
 
-	server.post('/api/sendMail', (req, res) => {
-		const { email, name, message } = req.body;
+	server.post('api/send', (req, res) => {
+		console.log(req.body);
 
-		mailer({
-			email,
-			name,
-			message
-		})
-			.then(() => {
-				console.log('success');
-				res.send('success');
-			})
-			.catch(error => {
-				console.log('failed', error);
-				res.send('badddd');
-			});
+		send(name, email, message);
 	});
 });
-// .catch(ex => {
-// 	console.error(ex.stack);
-// 	process.exit(1);
-// });

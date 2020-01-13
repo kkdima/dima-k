@@ -1,56 +1,33 @@
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
+import '../styles/main.css';
+// import Link from "next/link";
 
 const links = [
-  { href: 'https://zeit.co/now', label: 'ZEIT' },
-  { href: 'https://github.com/zeit/next.js', label: 'GitHub' },
+	{ href: '', label: 'Get in touch' },
+	{ href: '/', label: 'Home' }
 ].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-})
+	link.key = `nav-link-${link.href}-${link.label}`;
+	return link;
+});
 
 const Nav = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <a href={href}>{label}</a>
-        </li>
-      ))}
-    </ul>
+	<nav className='m-auto mt-3 w-body-max w-5/6 flex justify-between'>
+		<ul className='flex justify-start border-black'>
+			{links.map(({ key, href, label }) => (
+				<li key={key}>
+					<a
+						href={href}
+						className='mr-10 flex text-xl pt-3 border-0 border-b-4 border-grey'
+					>
+						{label}
+					</a>
+				</li>
+			))}
+		</ul>
+		<a href='//github.com/kkdima' target='_blank'>
+			<img src='/images/JamIcons-github.svg' alt='github' className='mt-3' />
+		</a>
+	</nav>
+);
 
-    <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
-      }
-      nav {
-        text-align: center;
-      }
-      ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 13px;
-      }
-    `}</style>
-  </nav>
-)
-
-export default Nav
+export default Nav;

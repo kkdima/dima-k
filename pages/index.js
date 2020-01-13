@@ -1,88 +1,43 @@
-import React from 'react'
-import Head from 'next/head'
-import Nav from '../components/nav'
+import React from 'react';
+import Link from 'next/link';
+import Layout from '../components/layout.js';
+import Projects from '../components/projects.js';
+import Technologies from '../components/technologies.js';
+import AboutMe from '../components/about-me.js';
+import ContactMe from '../components/contact-me.js';
+import Message from '../components/message.js';
 
-const Home = () => (
-  <div>
-    <Head>
-      <title>Home</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+export default () => (
+	<Layout>
+		<div className='flex flex-col sm:w-5/6 m-auto mt-20 w-body-max'>
+			<div className='flex flex-col-reverse md:flex-row mb-20'>
+				<div className='pl-6 leading-tight text-3xl mt-6 md:mr-10 text-xl'>
+					<p>Hi, my name is</p>
+					<h1 className='ml:text-5xl-custom font-bold'>Dima Kononenko</h1>
+					<p className=''>I'm a</p>
+					<h1 className='ml:text-5xl-custom font-bold'>front-end developer.</h1>
+				</div>
+				<div className='m-auto md:m-0'>
+					<img src='/images/User-pic-emoji.png' className='object-contain' alt='' />
+				</div>
+			</div>
 
-    <Nav />
+			<AboutMe />
 
-    <div className="hero">
-      <h1 className="title">Welcome to Next.js!</h1>
-      <p className="description">
-        To get started, edit <code>pages/index.js</code> and save to reload.
-      </p>
-
-      <div className="row">
-        <a href="https://nextjs.org/docs" className="card">
-          <h3>Documentation &rarr;</h3>
-          <p>Learn more about Next.js in the documentation.</p>
-        </a>
-        <a href="https://nextjs.org/learn" className="card">
-          <h3>Next.js Learn &rarr;</h3>
-          <p>Learn about Next.js by following an interactive tutorial!</p>
-        </a>
-        <a
-          href="https://github.com/zeit/next.js/tree/master/examples"
-          className="card"
-        >
-          <h3>Examples &rarr;</h3>
-          <p>Find other example boilerplates on the Next.js GitHub.</p>
-        </a>
-      </div>
-    </div>
-
-    <style jsx>{`
-      .hero {
-        width: 100%;
-        color: #333;
-      }
-      .title {
-        margin: 0;
-        width: 100%;
-        padding-top: 80px;
-        line-height: 1.15;
-        font-size: 48px;
-      }
-      .title,
-      .description {
-        text-align: center;
-      }
-      .row {
-        max-width: 880px;
-        margin: 80px auto 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      .card {
-        padding: 18px 18px 24px;
-        width: 220px;
-        text-align: left;
-        text-decoration: none;
-        color: #434343;
-        border: 1px solid #9b9b9b;
-      }
-      .card:hover {
-        border-color: #067df7;
-      }
-      .card h3 {
-        margin: 0;
-        color: #067df7;
-        font-size: 18px;
-      }
-      .card p {
-        margin: 0;
-        padding: 12px 0 0;
-        font-size: 13px;
-        color: #333;
-      }
-    `}</style>
-  </div>
-)
-
-export default Home
+			<div className='flex flex-col md:flex-row justify-between mt-10'>
+				<div className='mb-10 max-w-full md:w-1/2 md:mb-0 md:mr-3 p-0 '>
+					<Projects />
+				</div>
+				<div className='flex flex-col md:w-1/2 md:ml-3'>
+					<div className='mb-10 max-w-full md:max-width-465'>
+						<Technologies />
+					</div>
+					<div className='max-w-full md:max-width-465'>
+						<ContactMe />
+					</div>
+				</div>
+			</div>
+			<Message />
+		</div>
+	</Layout>
+);

@@ -40,7 +40,7 @@ const axios = require('axios');
 
 // function downloadCV() {
 // 	axios({
-// 		url: 'hdima-k.dimaakononenko.now.sh/public/cv.pdf',
+// 		url: 'dima-k.dimaakononenko.now.sh/public/cv.pdf',
 // 		method: 'GET',
 // 		responseType: 'blob', // important
 // 	  }).then((response) => {

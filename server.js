@@ -1,55 +1,35 @@
 const express = require('express');
 const next = require('next');
-const path = require('path');
 
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-
-const port = parseInt(process.env.PORT, 10) || 5000;
+const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
+const bodyParser = require('body-parser');
 
 app.prepare().then(() => {
-	const { mail } = require('./public/mail');
 	const server = express();
 
-	// body parser middleware
-	server.use(bodyParser.urlencoded({ extended: true }));
-	server.use(bodyParser.json());
-	server.use(cookieParser());
-
-	// static folder
-	server.use('/public', express.static(path.join(__dirname, 'public')));
+	server.use(function(req, res, next) {
+		res.header('Access-Control-Allow-Origin', 'YOUR-DOMAIN.TLD'); // update to match the domain you will make the request from
+		res.header(
+			'Access-Control-Allow-Headers',
+			'Origin, X-Requested-With, Content-Type, Accept'
+		);
+		next();
+	});
 
 	server.all('*', (req, res) => {
 		return handle(req, res);
 	});
 
+	server.use(bodyParser.urlencoded({ extended: false }));
+	server.use(bodyParser.json());
+
+	server.locals.layout = false;
+
 	server.listen(port, err => {
 		if (err) throw err;
 		console.log(`> Ready on http://localhost:${port}`);
-	});
-
-	server.post('api/send', (req, res) => {
-		console.log(req.body);
-
-		// sendEmail(name, email, message);
-
-		// const { email, name, message } = req.body;
-
-		// mailer({
-		// 	email,
-		// 	name,
-		// 	message
-		// })
-		// 	.then(() => {
-		// 		console.log('success');
-		// 		res.send('success');
-		// 	})
-		// 	.catch(error => {
-		// 		console.log('failed', error);
-		// 		res.send('badddd');
-		// 	});
 	});
 });

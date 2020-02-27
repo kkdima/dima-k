@@ -13,6 +13,6 @@ module.exports = {
 					}
 			  ]
 			: undefined,
-		require('autoprefixer')
+		require('autoprefixer'),
 	]
 };

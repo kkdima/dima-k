@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import axios from 'axios';
 
 const Form = () => {
-	const [name, setName] = useState('');
-	const [email, setEmail] = useState('');
-	const [message, setMessage] = useState('');
+	const [name, setName] = useState(''),
+		[email, setEmail] = useState(''),
+		[message, setMessage] = useState('');
 
 	const handleSubmit = e => {
 		e.preventDefault();
@@ -16,9 +16,16 @@ const Form = () => {
 			message
 		};
 
-		axios.post('/api/send', dataToSubmit);
+		console.log(dataToSubmit);
 
-		// resetForm();
+		axios
+			.post('/api/send', dataToSubmit)
+			.then(function(response) {
+				console.log(response);
+			})
+			.catch(function(error) {
+				console.log(error);
+			});
 	};
 
 	const handleChange = e => {
@@ -33,17 +40,13 @@ const Form = () => {
 		}
 	};
 
-	const resetForm = () => {
-		useState({ name: '', email: '', message: '' });
-	};
-
 	return (
 		<div className='rounded max-w-full md:w-1/2 mt-10 container-custom md:mr-3 md:max-width-465'>
 			<h2 className='text-4xl font-bold mb-6'> Send me a message </h2>
 			<form
 				onSubmit={handleSubmit}
 				method='POST'
-				action='api/sendMail'
+				action='/api/send'
 				className='flex flex-col'
 			>
 				<input

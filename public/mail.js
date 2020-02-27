@@ -1,41 +1,63 @@
+require('dotenv').config();
+
 const nodemailer = require('nodemailer');
 const { google } = require('googleapis');
 const OAuth2 = google.auth.OAuth2;
-require('dotenv').config();
 
 const getEmailData = ({ email, name, message }) => {
+	const output = `
+		<p>You have a new contact request</p>
+		<h3>Contact Details</h3>
+		<ul>  
+		<li>Name: ${name}</li>
+		<li>Company: ${name}</li>
+		<li>Email: ${email}</li>
+		<li>Phone: ${name}</li>
+		</ul>
+		<h3>Message</h3>
+		<p>${message}</p>
+  `;
+
 	const from = name && email ? `${name} <${email}>` : `${name || email}`;
+
 	const form = {
 		from,
 		to: 'dimaakononenko@gmail.com',
 		subject: `New message from ${from}`,
 		message,
-		replyTo: from
+		replyTo: from,
+		html: output
 	};
+	
+	const oauth2Client = new OAuth2(
+		`${process.env.ClientID}`,
+		`${process.env.ClientSecret}`,
+		'https://developers.google.com/oauthplayground'
+	);
 
-	return new Promise((resolve, reject) => {
-		transporter.sendMail(form, (error, info) =>
-			error ? reject(error) : resolve(info)
-		);
+	oauth2Client.setCredentials({
+		refresh_token: `${process.env.RefreshToken}`
 	});
-};
 
-// Setting up OAuth from gmail
-const oauth2Client = new OAuth2(
-	`${process.env.ClientID}`,
-	`${process.env.ClientSecret}`,
-	'https://developers.google.com/oauthplayground'
-);
+	const accessToken = oauth2Client.getAccessToken();
 
-oauth2Client.setCredentials({
-	refresh_token: `${process.env.RefreshToken}`
-});
+	const scopes = ['https://www.googleapis.com/auth/gmail'];
 
-const accessToken = oauth2Client.getAccessToken();
+	const url = oauth2Client.generateAuthUrl({
+		// 'online' (default) or 'offline' (gets refresh_token)
+		access_type: 'offline',
 
-const sendEmail = (email, name, message) => {
+		// If you only need one scope you can pass it as a string
+		scope: scopes
+	});
+
+	console.log(url);
+
+	// create reusable transporter object using the default SMTP transport
 	const transporter = nodemailer.createTransport({
-		service: 'Gmail',
+		host: 'smtp.gmail.com',
+		port: 465,
+		secure: true,
 		auth: {
 			type: 'OAuth2',
 			user: 'kkdimaa@gmail.com',
@@ -47,17 +69,6 @@ const sendEmail = (email, name, message) => {
 		tls: {
 			rejectUnauthorized: false
 		}
-	});
-
-	const mail = getEmailData(email, name, message);
-
-	transporter.sendMail(mail, function(error, response) {
-		if (error) {
-			console.log(error);
-		} else {
-			console.log('email sent successfully');
-		}
-		transporter.close();
 	});
 };
 

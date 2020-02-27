@@ -1,13 +1,12 @@
 import React from 'react';
-import Link from 'next/link';
-import Layout from '../components/layout.js';
+import Layout from '../components/layout';
 import Projects from '../components/projects.js';
 import Technologies from '../components/technologies.js';
-import AboutMe from '../components/about-me.js';
-import ContactMe from '../components/contact-me.js';
+import AboutMe from '../components/aboutMe.js';
+import ContactMe from '../components/contactMe.js';
 import Form from '../components/form.js';
 
-export default () => (
+const Index = () => (
 	<Layout>
 		<div className='flex flex-col sm:w-5/6 m-auto mt-20 w-body-max'>
 			<div className='flex flex-col-reverse md:flex-row mb-20'>
@@ -41,3 +40,5 @@ export default () => (
 		</div>
 	</Layout>
 );
+
+export default Index;

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/main.css';
+import '../styles/index.css';
 // import Link from "next/link";
 
 const links = [

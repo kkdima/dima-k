@@ -1,4 +1,4 @@
-require('../styles/main.css');
+require('../styles/index.css');
 
 function MyApp({ Component, pageProps }) {
 	return <Component {...pageProps} />;

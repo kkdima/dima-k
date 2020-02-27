@@ -41,7 +41,7 @@ const Form = () => {
 	};
 
 	return (
-		<div className='rounded max-w-full md:w-1/2 mt-10 container-custom md:mr-3 md:max-width-465'>
+		<div className='rounded max-w-full md:w-full mt-10 container-custom md:mr-3 md:max-width-465'>
 			<h2 className='text-4xl font-bold mb-6'> Send me a message </h2>
 			<form
 				onSubmit={handleSubmit}

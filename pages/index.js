@@ -5,10 +5,19 @@ import Technologies from '../components/technologies.js';
 import AboutMe from '../components/aboutMe.js';
 import ContactMe from '../components/contactMe.js';
 import Form from '../components/form.js';
+import { motion } from 'framer-motion';
+import { stagger, fadeInUp } from '../public/styles/framer_animation/index.js';
 
 const Index = () => (
 	<Layout>
-		<div className='flex flex-col sm:w-5/6 m-auto mt-20 w-body-max'>
+		{/* <motion.div variants={stagger}> */}
+		<motion.div
+			exit={{ opacity: 0, y: -60 }}
+			variants={fadeInUp}
+			initial='initial'
+			animate='animate'
+			className='flex flex-col sm:w-5/6 m-auto mt-20 w-body-max'
+		>
 			<div className='flex flex-col-reverse md:flex-row mb-20'>
 				<div className='pl-6 leading-tight text-3xl mt-6 md:mr-10 text-xl'>
 					<p>Hi, my name is</p>
@@ -37,7 +46,8 @@ const Index = () => (
 				</div>
 			</div>
 			<Form />
-		</div>
+		</motion.div>
+		{/* </motion.div> */}
 	</Layout>
 );
 

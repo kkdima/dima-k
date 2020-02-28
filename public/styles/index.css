@@ -1,8 +1,7 @@
-@import "tailwindcss/base";
-
-@import "tailwindcss/components";
-
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
 
 
 @font-face {
@@ -24,10 +23,6 @@
 img {
 	user-select: none;
 	-webkit-user-drag: none;
-}
-
-button:focus {
-	outline: 0;
 }
 
 .w-body-max {

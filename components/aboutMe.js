@@ -1,12 +1,5 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-// import DownloadLink from 'react-download-link';
-
-const info = [
-	'9,000+ App Downloads',
-	'10,000+ Happy Customers',
-	'1K+ Deliveries'
-];
 
 const variants = {
 	visible: {
@@ -22,35 +15,6 @@ const variants = {
 		}
 	}
 };
-
-// const fs = require('fs');
-// const path = require('path');
-// const axios = require('axios');
-
-// async function download() {
-// 	const url = '../public/cv.pdf';
-// 	const path = Path.resolve(__dirname, 'files', 'cv.pdf');
-// }
-
-const axios = require('axios');
-// const FileDownload = require('js-file-download');
-// axios.get(`/cv.pdf`).then(response => {
-// 	FileDownload(response.data, 'cv.pdf');
-// });
-
-// function downloadCV() {
-// 	axios({
-// 		url: 'dima-k.dimaakononenko.now.sh/public/cv.pdf',
-// 		method: 'GET',
-// 		responseType: 'blob', // important
-// 	  }).then((response) => {
-// 		const url = window.URL.createObjectURL(new Blob([response.data], { type: 'application/pdf' }));
-// 		const link = document.createElement('a');
-// 		link.href = url;
-// 		link.target = '_blank'
-// 		link.click();
-// 	  });
-// }
 
 const AboutMe = () => {
 	return (
@@ -77,7 +41,7 @@ const AboutMe = () => {
 				<p>Fast learner and adapter to the new workflows</p>
 			</div>
 			<div className='container w-full flex justify-end'>
-				<a href='/cv.pdf' target='_blank'>
+				<a href='/files/cv.pdf' target='_blank'>
 					<motion.button
 						// onClick={downloadCV()}
 						whileHover={{ scale: 1.1 }}

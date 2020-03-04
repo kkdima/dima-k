@@ -6,27 +6,26 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 const bodyParser = require('body-parser');
-// const showRoutes = require('./routes/index.js');
-// const routes = require('./pages/routes/router');
 
 app
 	.prepare()
 	.then(() => {
 		const server = express();
 
-		// server.use('/api', showRoutes(server));
-
 		server.use(function(req, res, next) {
 			res.header('Access-Control-Allow-Origin', 'YOUR-DOMAIN.TLD'); // update to match the domain you will make the request from
 			res.header(
 				'Access-Control-Allow-Headers',
 				'Origin, X-Requested-With, Content-Type, Accept'
-			); 
+			);
 			next();
 		});
 
-		server.get('/projects/:title', (req, res) => {
-			const query = { title: req.params.title };
+		server.get('/projects/:route', (req, res) => {
+			const query = {
+				route: req.params.route,
+				key: req.params.nam
+			};
 			return app.render(req, res, '/projects/project', query);
 		});
 

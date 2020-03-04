@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { stagger, fadeInDown } from '../public/styles/framer_animation/index';
+import { stagger, fadeInDown } from '../../public/styles/framer_animation/animations';
 // import Link from "next/link";
 
 const links = [

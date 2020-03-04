@@ -1,8 +1,16 @@
-import React from "react";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { stagger, fadeInUp } from '../../public/styles/framer_animation/animations';
 
 const ContactMe = () => {
 	return (
-		<div className='rounded container-custom relative overflow-hidden min-h-contactme flex flex-col'>
+		<motion.div
+			exit={{ opacity: 0, y: -60 }}
+			variants={fadeInUp}
+			initial='initial'
+			animate='animate'
+			className='rounded container-custom relative overflow-hidden min-h-contactme flex flex-col'
+		>
 			<div className=''>
 				<h2 className='text-4xl font-bold mb-4'>Contact Me</h2>
 				<p className='paragraph'>
@@ -19,7 +27,7 @@ const ContactMe = () => {
 				<p className='font-bold text-3xl'>Los Angeles</p>
 				<img src='/images/geo-pin.svg' className='ml-10' alt='' />
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

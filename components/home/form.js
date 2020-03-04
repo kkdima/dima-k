@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
+import { fadeInUp } from '../../public/styles/framer_animation/animations';
+
 
 const Form = () => {
 	const [name, setName] = useState(''),
@@ -41,7 +43,13 @@ const Form = () => {
 	};
 
 	return (
-		<div className='rounded max-w-full md:w-full mt-10 container-custom md:mr-3 md:max-width-465 mb-8'>
+		<motion.div
+			exit={{ opacity: 0, y: -60 }}
+			variants={fadeInUp}
+			initial='initial'
+			animate='animate'
+			className='rounded max-w-full md:w-full mt-10 container-custom md:mr-3 md:max-width-465 mb-8'
+		>
 			<h2 className='text-4xl font-bold mb-6'> Send me a message </h2>
 			<form
 				onSubmit={handleSubmit}
@@ -84,7 +92,7 @@ const Form = () => {
 					</motion.button>
 				</div>
 			</form>
-		</div>
+		</motion.div>
 	);
 };
 

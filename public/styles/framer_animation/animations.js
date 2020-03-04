@@ -3,7 +3,7 @@ const easing = [0.6, -0.05, 0.01, 0.99];
 export const stagger = {
 	animate: {
 		transition: {
-			staggerChildren: 2.2
+			staggerChildren: 0.1
 		}
 	}
 };
@@ -21,6 +21,9 @@ export const fadeInUp = {
 			duration: 0.6,
 			ease: easing
 		}
+	},
+	exit: {
+		opacity: 0
 	}
 };
 

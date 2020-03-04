@@ -1,11 +1,12 @@
 import React from 'react';
-import Nav from './nav';
+import Nav from './home/nav';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Layout = props => (
-	<div>
+	<>
 		<Nav />
 		{props.children}
-	</div>
+	</>
 );
 
 export default Layout;

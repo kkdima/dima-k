@@ -130,6 +130,10 @@ img {
 	transform: rotate(180deg);
 }
 
+.links #insta {
+	margin-top: 2px;
+}
+
 /* .project-image {
 	max-height: 100px !important;
 } */

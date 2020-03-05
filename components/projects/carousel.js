@@ -35,13 +35,13 @@ const Carousel = props => {
 	const [height, setHeight] = useState(0);
 	const imageRef = useRef(null);
 	const imageIndex = wrap(0, images.length, page);
-	const paginate = newDirection => {
-		setPage([page + newDirection, newDirection]);
-	};
 	const router = useRouter();
 	const swipeConfidenceThreshold = 5000;
 	const swipePower = (offset, velocity) => {
 		return Math.abs(offset) * velocity;
+	};
+	const paginate = newDirection => {
+		setPage([page + newDirection, newDirection]);
 	};
 
 	useEffect(() => {
@@ -55,11 +55,9 @@ const Carousel = props => {
 		};
 	}, [height]);
 
-	console.log(height);
-
 	return (
 		<div className={`${props.resize} overflow-x-hidden m-auto md:max-w-3/4`}>
-			<AnimatePresence exitBeforeEnter initial={false} custom={direction}>
+			<AnimatePresence initial={false} custom={direction}>
 				<motion.div
 					variants={variants}
 					initial='enter'
@@ -110,7 +108,7 @@ const Carousel = props => {
 					<img src='/images/arrow-back.svg' alt='forward' />
 				</div>
 			</div>
-            <p>some inspirations, behind the scenes, references, etc.</p>
+			<p className='text-sm'>some inspirations, behind the scenes, references, etc.</p>
 		</div>
 	);
 };

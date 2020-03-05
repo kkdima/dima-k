@@ -1,14 +1,30 @@
 require('../public/styles/index.css');
-import React from 'react';
+import React, { useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { useRouter } from 'next/router';
+import reactGA from 'react-ga';
+import { initGA, logPageView } from '../lib/gtag';
+
+import * as gtag from '../lib/gtag';
+import Router from 'next/router';
+
+const ID = () =>
+	'_' +
+	Math.random()
+		.toString(36)
+		.substr(2, 9);
 
 const MyApp = ({ Component, pageProps }) => {
-	const router = useRouter();
+	useEffect(() => {
+		if (!window.GA_INITIALIZED) {
+			initGA();
+			window.GA_INITIALIZED = true;
+		}
+		logPageView();
+	}, []);
 	return (
 		<>
 			<AnimatePresence exitBeforeEnter>
-				<Component {...pageProps} key={router.asPath} />
+				<Component {...pageProps} key={ID()} />
 			</AnimatePresence>
 		</>
 	);

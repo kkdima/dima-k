@@ -55,7 +55,7 @@ const Project = props => {
 					</p>
 				</div>
 			</div>
-			<div className='md:w-1/2 relative px-3 pt-48 fl:px-12 md:px-0 ad:max-w-3/4 hidden md:block'>
+			<div className='md:w-1/2 relative px-3 pt-48 fl:px-12 :px-0 ad:max-w-3/4 hidden md:block'>
 				<Carousel resize='hidden md:block' />
 			</div>
 		</motion.div>

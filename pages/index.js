@@ -10,19 +10,21 @@ import {
 	stagger,
 	fadeInUp
 } from '../public/styles/framer_animation/animations';
-import { useRouter } from 'next/router';
+
+const ID = () =>
+	'_' +
+	Math.random()
+		.toString(36)
+		.substr(2, 9);
 
 const Index = () => {
-	const router = useRouter();
-	console.log(router.asPath);
-
 	return (
 		<Layout>
 			<AnimatePresence exitBeforeEnter>
 				<motion.div
 					variants='fadeInUp'
 					exit='exit'
-					key={router.asPath}
+					key={ID()}
 					variants={fadeInUp}
 					initial='initial'
 					animate='animate'

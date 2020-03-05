@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import axios from 'axios';
 import { fadeInUp } from '../../public/styles/framer_animation/animations';
 
-
 const Form = () => {
 	const [name, setName] = useState(''),
 		[email, setEmail] = useState(''),
@@ -11,6 +10,12 @@ const Form = () => {
 
 	const handleSubmit = e => {
 		e.preventDefault();
+
+		gtag.event({
+			action: 'submit_form',
+			category: 'Contact',
+			label: message
+		});
 
 		const dataToSubmit = {
 			name,
@@ -52,6 +57,7 @@ const Form = () => {
 		>
 			<h2 className='text-4xl font-bold mb-6'> Send me a message </h2>
 			<form
+				id='#contact-form'
 				onSubmit={handleSubmit}
 				method='POST'
 				action='/api/send'

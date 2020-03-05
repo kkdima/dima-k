@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { stagger, fadeInUp } from '../../public/styles/framer_animation/animations';
+import {
+	stagger,
+	fadeInUp
+} from '../../public/styles/framer_animation/animations';
 
 const AboutMe = () => {
 	return (
@@ -38,22 +41,22 @@ const AboutMe = () => {
 					<img src='/images/Ellipse.svg' className='object-contain mr-4' alt='' />
 					<p>Fast learner and adapter to the new workflows</p>
 				</motion.div>
-				<motion.div className='container w-full flex justify-end'>
-					<a href='/files/cv.pdf' target='_blank'>
-						<motion.button
-							// onClick={downloadCV()}
-							whileHover={{ scale: 1.1 }}
-							whileTap={{ scale: 0.9, y: '5px' }}
-							className='py-1 px-3 rounded flex bg-blue-c'
-						>
-							open CV
-							<img
-								src='/images/OpenButton.svg'
-								className='w-5 ml-2 mt-1 -mr-1'
-								alt=''
-							/>
-						</motion.button>
-					</a>
+				<motion.div className='flex justify-end'>
+				<a href='/files/cv.pdf' target='_blank'>
+					<motion.button
+						// onClick={downloadCV()}
+						whileHover={{ scale: 1.1 }}
+						whileTap={{ scale: 0.9, y: '5px' }}
+						className='py-1 px-3 rounded flex bg-blue-c'
+					>
+						open CV
+						<img
+							src='/images/OpenButton.svg'
+							className='w-5 ml-2 mt-1 -mr-1'
+							alt=''
+						/>
+					</motion.button>
+				</a>
 				</motion.div>
 			</motion.div>
 		</motion.div>

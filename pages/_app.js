@@ -3,8 +3,6 @@ import React, { useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import reactGA from 'react-ga';
 import { initGA, logPageView } from '../lib/gtag';
-
-import * as gtag from '../lib/gtag';
 import Router from 'next/router';
 
 const ID = () =>
@@ -14,6 +12,7 @@ const ID = () =>
 		.substr(2, 9);
 
 const MyApp = ({ Component, pageProps }) => {
+	
 	useEffect(() => {
 		if (!window.GA_INITIALIZED) {
 			initGA();
@@ -21,6 +20,7 @@ const MyApp = ({ Component, pageProps }) => {
 		}
 		logPageView();
 	}, []);
+
 	return (
 		<>
 			<AnimatePresence exitBeforeEnter>

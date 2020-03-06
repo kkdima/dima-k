@@ -106,7 +106,7 @@ img {
 
 .next,
 .prev {
-	/* top: calc(50% - 20px); */
+	/* top: calc(30% - 20px); */
 	/* position: absolute; */
 	background: white;
 	width: 30px;
@@ -118,22 +118,13 @@ img {
 	cursor: pointer;
 	font-weight: bold;
 	font-size: 18px;
-	z-index: 2;
-}
-
-.next {
-	right: 10px;
+	z-index: 3;
 }
 
 .prev {
-	left: -10px;
 	transform: rotate(180deg);
 }
 
 .links #insta {
 	margin-top: 2px;
 }
-
-/* .project-image {
-	max-height: 100px !important;
-} */

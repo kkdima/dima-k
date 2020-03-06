@@ -22,7 +22,6 @@ const Index = () => {
 		<Layout>
 			<AnimatePresence exitBeforeEnter>
 				<motion.div
-					variants='fadeInUp'
 					exit='exit'
 					key={ID()}
 					variants={fadeInUp}

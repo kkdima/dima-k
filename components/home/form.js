@@ -11,12 +11,6 @@ const Form = () => {
 	const handleSubmit = e => {
 		e.preventDefault();
 
-		gtag.event({
-			action: 'submit_form',
-			category: 'Contact',
-			label: message
-		});
-
 		const dataToSubmit = {
 			name,
 			email,

@@ -16,7 +16,7 @@ const Nav = () => (
 	>
 		<motion.div
 			className='flex justify-start border-black'
-			className='ml-6 mr-10 flex text-xl pt-3 border-0 border-b-4 border-grey'
+			className='md:ml-6 mr-10 flex text-xl pt-3 border-0 border-b-4 border-grey'
 			variants={fadeInDown}
 			whileHover={{ scale: 1.1 }}
 			whileTap={{ scale: 0.9, y: '5px' }}

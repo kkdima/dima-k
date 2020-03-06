@@ -7,25 +7,46 @@
 		},
 		{
 			"id": 1,
-			"route": "contacts-2",
+			"route": "contacts",
 			"img": "/images/Contacts-2-0.svg"
 		},
 		{
 			"id": 2,
-			"route": "github-finder",
+			"route": "githubfinder",
 			"img": "/images/github-finder.svg"
 		}
 	],
 	"barva": {
 		"name": "Barva",
-		"description": "Barva is my personal project. That’s the place where I can collaborate and work with talanted and creative people. Main goal is to focus on improving digital side of customer’s bussinesses."
+		"description": "Barva is a digital agency. That’s the business I'm growing with talented and creative people. The main goal is to focus on improving the digital side of the customer’s businesses.",
+		"link": "http://www.barva-design.com",
+		"technology1": "React JS",
+		"technology2": "Netlify",
+		"technology3": "Framer Motion",
+		"about_tech1": "Front-end",
+		"about_tech2": "Deployment",
+		"about_tech3": "Animation"
 	},
-	"contacts-2": {
+	"contacts": {
 		"name": "Contacts",
-		"description": "Barva is my personal project. That’s the place where I can collaborate and work with talanted and creative people. Main goal is to focus on improving digital side of customer’s bussinesses."
+		"description": "Even though all your contacts are already chilling somewhere on the cloud. This project still was a good practice to make interface communicate with Mongo DB database.",
+		"link": "https://contacts-two-point-zero.herokuapp.com/",
+		"technology1": "React JS",
+		"technology2": "Heroku",
+		"technology3": "Mongo DB",
+		"about_tech1": "Front-end",
+		"about_tech2": "Deployment",
+		"about_tech3": "Database"
 	},
-	"github-finder": {
+	"githubfinder": {
 		"name": "Github Finder",
-		"description": "Barva is my personal project. That’s the place where I can collaborate and work with talanted and creative people. Main goal is to focus on improving digital side of customer’s bussinesses."
+		"description": "Another take on the Github front-end and work with its API.",
+		"link": "https://github-finder-dima.netlify.com/",
+		"technology1": "React JS",
+		"technology2": "Netlify",
+		"technology3": "Framer Motion",
+		"about_tech1": "Front-end",
+		"about_tech2": "Deployment",
+		"about_tech3": "Animation"
 	}
 }

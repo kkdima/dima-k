@@ -31,6 +31,7 @@ const ButtonBack = () => (
 
 const Project = props => {
 	const [width, setWidth] = useState(0);
+	const [src, setSrc] = useState('');
 	const {
 		name,
 		description,
@@ -47,6 +48,7 @@ const Project = props => {
 		const resizeListener = () => {
 			setWidth(window.innerWidth);
 		};
+		setSrc(props.src);
 		resizeListener();
 		window.addEventListener('resize', resizeListener);
 		return () => {
@@ -85,7 +87,7 @@ const Project = props => {
 					</motion.p>
 				</motion.div>
 
-				{width < 768 ? <Carousel /> : null}
+				{width < 768 ? <Carousel src={src} /> : null}
 
 				<motion.div
 					variants={stagger}
@@ -100,7 +102,7 @@ const Project = props => {
 				</motion.div>
 			</motion.div>
 			<div className='md:w-1/2 relative px-3 pt-48 fl:px-12 md:px-0 ad:max-w-3/4 hidden md:block'>
-				{width > 768 ? <Carousel /> : null}
+				{width > 768 ? <Carousel src={src} /> : null}
 			</div>
 		</motion.div>
 	);
@@ -108,7 +110,8 @@ const Project = props => {
 
 Project.getInitialProps = async ({ query }) => {
 	return {
-		project: projects[query.project]
+		project: projects[query.project],
+		src: images[query.project]
 	};
 };
 

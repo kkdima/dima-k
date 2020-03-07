@@ -2,7 +2,6 @@ import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 // require('../.env').config();
 
-
 export default class extends Document {
 	render() {
 		return (
